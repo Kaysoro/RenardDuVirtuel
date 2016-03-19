@@ -32,6 +32,16 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     }
     var propositionProject = document.getElementById("proj_"+projId+"_prop_"+projPropId);
     propositionProject.style.width = "100%";
+
+    document.getElementById("img_proj_"+projId+"_prop_"+projPropId).style.display = "none";
+
+    var container = document.createElement("div");
+    container.setAttribute("id", "container_proj_" + projId + "_prop_" + projPropId + "_opened");
+    propositionProject.appendChild(container);
+
+    var visualisateur3D = document.createElement("img");
+    visualisateur3D.setAttribute("src", "http://placehold.it/640x480");
+    container.appendChild(visualisateur3D);
 }
 
 function retract_proposition_project(projId, projPropId, projPropNumbers)
@@ -41,9 +51,14 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
     {
         if(i == projPropId)
             continue;
-        var other_project = document.getElementById("proj_"+projId+"_prop_"+i);
+        var other_project = document.getElementById("proj_" + projId + "_prop_" + i);
         other_project.style.display = "block";
     }
-    var propositionProject = document.getElementById("proj_"+projId+"_prop_"+projPropId);
+
+    document.getElementById("img_proj_" + projId + "_prop_" + projPropId).style.display = "inline-block";
+
+    document.getElementById("container_proj_" + projId + "_prop_" + projPropId + "_opened").remove();
+
+    var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
     propositionProject.style.width = "auto";
 }

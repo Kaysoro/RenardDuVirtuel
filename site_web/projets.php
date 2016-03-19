@@ -27,7 +27,7 @@ for($projId = 0; $projId < count($projPropNumbers); ++$projId)
 ?>
                 <article class="proposition_project" id="proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>">
                     <a href="projet.php?projId=<?php echo $projId;?>&projPropId=<?php echo $projPropId;?>" id="projPropActivationLink_<?php echo $projId . "_" . $projPropId;?>"><h1>proposition de projet <?php echo $projPropId; ?></h1></a>
-                    <img alt="image projet" src="http://placehold.it/300x200" />
+                    <img alt="image projet" src="http://placehold.it/300x200" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
                 </article>
 <?php
     }
