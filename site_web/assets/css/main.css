@@ -461,6 +461,10 @@
 		text-align: center;
 	}
 
+	header {
+		text-align:center;
+	}
+	
 	header p {
 		color: rgba(255, 255, 255, 0.5);
 		position: relative;
@@ -820,81 +824,11 @@
 
 	input[type="text"],
 	input[type="password"],
-	input[type="email"],
-	select {
-		height: 2.75em;
+	input[type="email"] {
+		color:#898684;
+		border-color:#C5C4C3;
 	}
 
-	textarea {
-		padding: 0.75em 1em;
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		display: block;
-		float: left;
-		margin-right: -2em;
-		opacity: 0;
-		width: 1em;
-		z-index: -1;
-	}
-
-		input[type="checkbox"] + label,
-		input[type="radio"] + label {
-			text-decoration: none;
-			color: rgba(255, 255, 255, 0.75);
-			cursor: pointer;
-			display: inline-block;
-			font-size: 1em;
-			font-weight: 400;
-			padding-left: 2.4em;
-			padding-right: 0.75em;
-			position: relative;
-		}
-
-			input[type="checkbox"] + label:before,
-			input[type="radio"] + label:before {
-				-moz-osx-font-smoothing: grayscale;
-				-webkit-font-smoothing: antialiased;
-				font-family: FontAwesome;
-				font-style: normal;
-				font-weight: normal;
-				text-transform: none !important;
-			}
-
-			input[type="checkbox"] + label:before,
-			input[type="radio"] + label:before {
-				background: rgba(255, 255, 255, 0.125);
-				border-radius: 6px;
-				border: solid 2px rgba(255, 255, 255, 0.35);
-				content: '';
-				display: inline-block;
-				height: 1.65em;
-				left: 0;
-				line-height: 1.58125em;
-				position: absolute;
-				text-align: center;
-				top: 0;
-				width: 1.65em;
-			}
-
-		input[type="checkbox"]:checked + label:before,
-		input[type="radio"]:checked + label:before {
-			background: #1cb495;
-			border-color: #1cb495;
-			color: #ffffff;
-			content: '\f00c';
-		}
-
-		input[type="checkbox"]:focus + label:before,
-		input[type="radio"]:focus + label:before {
-			border-color: #1cb495;
-			box-shadow: 0 0 0 2px #1cb495;
-		}
 
 	input[type="checkbox"] + label:before {
 		border-radius: 6px;
@@ -902,31 +836,6 @@
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
-	}
-
-	::-webkit-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	:-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	::-moz-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	:-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
-	}
-
-	.formerize-placeholder {
-		color: rgba(255, 255, 255, 0.5) !important;
-		opacity: 1.0;
 	}
 
 /* Button */
@@ -1000,7 +909,7 @@
 		}
 
 /* Header */
-
+	
 	#header h1 {
 		font-size: 3.25em;
 		margin: 0 0 0.55em 0;
@@ -1092,88 +1001,222 @@
 
 /* Footer */
 
-	#footer {
-		-moz-transition: opacity 0.5s ease-in-out;
-		-webkit-transition: opacity 0.5s ease-in-out;
-		-ms-transition: opacity 0.5s ease-in-out;
-		transition: opacity 0.5s ease-in-out;
-		bottom: 4em;
-		color: rgba(255, 255, 255, 0.5);
-		left: 4em;
-		opacity: 0.5;
-		position: absolute;
+	.copyright {
+		font-size: 0.8em;
+		width:300px;
+		margin: 70px auto;
+		list-style: none;
+		padding: 0;
+		position:center;
+		text-align: center;
 	}
 
-		#footer .icons {
-			margin: 0 0 0.5em 0;
+	.copyright li {
+		border-left: solid 1px rgba(255, 255, 255, 0.25);
+		display: inline-block;
+		line-height: 1em;
+		margin: 0 0 0 0.75em;
+		padding: 0 0 0 0.75em;
+	}
+
+	.copyright li:first-child {
+		border-left: 0;
+		margin-left: 0;
+		padding-left: 0;
+	}
+
+	.copyright a {
+		color: inherit;
+	}
+
+	@media screen and (max-width: 1680px) {
+
+		#footer {
+			bottom: 3.5em;
+			left: 3.5em;
 		}
 
-		#footer .copyright {
-			font-size: 0.8em;
-			list-style: none;
-			padding: 0;
+	}
+
+	@media screen and (max-width: 736px) {
+
+		#footer {
+			bottom: 2em;
+			left: 2em;
 		}
 
-			#footer .copyright li {
-				border-left: solid 1px rgba(255, 255, 255, 0.25);
-				display: inline-block;
-				line-height: 1em;
-				margin: 0 0 0 0.75em;
-				padding: 0 0 0 0.75em;
-			}
+	}
 
-				#footer .copyright li:first-child {
-					border-left: 0;
-					margin-left: 0;
-					padding-left: 0;
-				}
+	@media screen and (max-width: 360px) {
 
-			#footer .copyright a {
-				color: inherit;
-			}
-
-		#footer:hover {
-			opacity: 1;
+		#footer {
+			bottom: 1.25em;
+			left: 1.25em;
 		}
 
-		#footer > :last-child {
-			margin-bottom: 0;
+	}
+
+	@media screen and (max-height: 640px) {
+
+		#footer {
+			bottom: auto;
+			left: auto;
+			margin: 1em 0 0 0;
+			position: relative;
 		}
 
-		@media screen and (max-width: 1680px) {
+	}
+	
+	@import url(http://fonts.googleapis.com/css?family=Bree+Serif);
 
-			#footer {
-				bottom: 3.5em;
-				left: 3.5em;
-			}
+* {
+	margin: 0;
+	padding: 0;
+	border: none;
+	outline: none;
+}
 
-		}
+#wrapper {
+	/* Center wrapper perfectly */
+	width: 300px;
+	height: 400px;
+	margin: 70px auto;
+}
 
-		@media screen and (max-width: 736px) {
+/*******************
+LOGIN FORM
+*******************/
 
-			#footer {
-				bottom: 2em;
-				left: 2em;
-			}
+.login-form {
+	width: 300px;
+	margin: 0 auto;
+	position: relative;
+	
+	background: #f3f3f3;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
 
-		}
+/*******************
+HEADER
+*******************/
 
-		@media screen and (max-width: 360px) {
+ .header-form {
+	padding: 20px 30px 30px 30px;
+}
 
-			#footer {
-				bottom: 1.25em;
-				left: 1.25em;
-			}
+/*******************
+CONTENT
+*******************/
 
-		}
+.login-form .content {
+	padding: 0 30px 25px 30px;
+}
 
-		@media screen and (max-height: 640px) {
+/* Input field */
+.login-form .content .input {
+	width: 188px;
+	padding: 15px 25px;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #9d9e9e;
+	text-shadow: 1px 1px 0 rgba(256,256,256,1.0);
+	background: #fff;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.50);
+}
 
-			#footer {
-				bottom: auto;
-				left: auto;
-				margin: 1em 0 0 0;
-				position: relative;
-			}
+/* Second input field */
+.login-form .content .password, .login-form .content .pass-icon {
+	margin-top: 25px;
+}
 
-		}
+.user-icon, .pass-icon {
+	width: 46px;
+	height: 47px;
+	display: block;
+	position: absolute;
+	left: 0px;
+	padding-right: 2px;
+	z-index: -1;
+	
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+.user-icon {
+	top:41px; /* Positioning fix for slide-in, got lazy to think up of simpler method. */
+	background: rgba(65,72,72,0.75) url(http://www.demo.amitjakhu.com/login-form/images/user-icon.png) no-repeat center;	
+}
+
+.pass-icon {
+	top:71px;
+	background: rgba(65,72,72,0.75) url(http://www.demo.amitjakhu.com/login-form/images/pass-icon.png) no-repeat center;
+}
+
+.content input:focus + div{
+	left: -46px;
+}
+
+/* Animation */
+.input, .user-icon, .pass-icon, .button, .register {
+	transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+}
+
+/*******************
+FOOTER
+*******************/
+
+.login-form .footer {
+	padding: 25px 30px 40px 30px;
+	overflow: auto;
+	
+	background: #d4dedf;
+	border-top: 1px solid #fff;
+	box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+	-moz-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+	-webkit-box-shadow: inset 0 1px 0 rgba(0,0,0,0.15);
+}
+
+
+
+.login-form .footer .button:hover {
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.login-form .footer .button:focus {
+	position: relative;
+	bottom: -1px;
+	background: #56c2e1;
+	box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+	-moz-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+	-webkit-box-shadow: inset 0 1px 6px rgba(256,256,256,0.75);
+}
+
+/* Register button */
+.login-form .footer .register {
+	background: rgb(190,207,207);
+}
+
+.login-form .footer .register:hover {
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+	-webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.5);
+}
