@@ -89,7 +89,19 @@ $db = connectDB();
                                 </div>
 
                             <div class="minipage minipage_right">
-                                <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>"><!-- //TODO: meilleur ID -->
+                                <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>">
+<?php
+                $comments = getComments($db, $databaseProjPropId);
+                foreach($comments as $comment)
+                {
+?>
+                                    <div class="comment">
+                                        <h1><?php echo $comment['Pseudo'];?></h1>
+                                        <p><?php echo $comment['Texte'];?></p>
+                                    </div>
+<?php
+                }
+?>
                                 </div>
                                 <div>
                                     <form method="POST" action="addComment.php">

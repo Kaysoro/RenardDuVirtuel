@@ -15,30 +15,6 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     document.getElementById("img_proj_"+projId+"_prop_"+projPropId).style.display = "none";
 
     document.getElementById("container_proj_" + projId + "_prop_" + projPropId).setAttribute("class", "container_proj opened");
-
-    //TODO: visibilite des items a l'ouverture
-
-    /*----visualisateur 3D----*/
-    //TODO: remplacer par le unity web player
-
-    /*---right minipage----*/
-    var rightMinipage = document.getElementById("comment_section_" + projId + "_" + projPropId);
-
-    for(var i = 0; i < 4; ++i)
-    {
-        //TODO: AJAX
-        var comment = document.createElement("div");
-        comment.setAttribute("class", "comment");
-        rightMinipage.appendChild(comment);
-
-        var commentAuthor = document.createElement("h1");
-        commentAuthor.appendChild(document.createTextNode("John Doe a commenté"));
-        comment.appendChild(commentAuthor);
-
-        var commentContent = document.createElement("p");
-        commentContent.appendChild(document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit nisi quis enim faucibus semper. Nunc tortor sapien, ullamcorper eget fermentum sed, auctor et ligula. Quisque et magna nec orci malesuada lobortis."));
-        comment.appendChild(commentContent);
-    }
 }
 
 function retract_proposition_project(projId, projPropId, projPropNumbers)
@@ -51,10 +27,6 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
 
     var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
     propositionProject.setAttribute("class", "proposition_project");
-
-    var commentSection = document.getElementById("comment_section_" + projId + "_" + projPropId);
-    while(commentSection.firstChild)
-        commentSection.removeChild(commentSection.firstChild);
 
     var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
     propositionProject.setAttribute("class", "proposition_project");
@@ -76,7 +48,5 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
     propositionProject.addEventListener("transitionend", delayedFunc, true);
 
     propositionProject.removeEventListener("transitionend", delayedFunc);
-
-//*/
 
 }
