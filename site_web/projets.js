@@ -35,13 +35,43 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
 
     document.getElementById("img_proj_"+projId+"_prop_"+projPropId).style.display = "none";
 
+    //creation de la vue
     var container = document.createElement("div");
     container.setAttribute("id", "container_proj_" + projId + "_prop_" + projPropId + "_opened");
     propositionProject.appendChild(container);
 
+    //TODO: AJAX
+
+    var titreProjet = document.createElement("H1");
+    titreProjet.appendChild(document.createTextNode("Titre de la proposition"));
+    container.appendChild(titreProjet);
+
+    var minipageContainer = document.createElement("main");
+    container.appendChild(minipageContainer);
+
+    var leftMinipage = document.createElement("div");
+    leftMinipage.setAttribute("class", "leftMinipage");
+    minipageContainer.appendChild(leftMinipage);
+
+    /*----visualisateur 3D----*/
+    //TODO: remplacer par le unity web player
     var visualisateur3D = document.createElement("img");
     visualisateur3D.setAttribute("src", "http://placehold.it/640x480");
-    container.appendChild(visualisateur3D);
+    leftMinipage.appendChild(visualisateur3D);
+
+    /*----info bloc----*/
+    var infoBloc = document.createElement("div"); //TODO: find better HTML element
+
+    var priceTag = document.createElement("span");
+    priceTag.appendChild(document.createTextNode("5 000 000€"));
+    infoBloc.appendChild(priceTag);
+
+    var VRbutton = document.createElement("input");
+    VRbutton.setAttribute("type", "button");
+    VRbutton.setAttribute("value", "Réalité Virtuelle");
+    infoBloc.appendChild(VRbutton);
+
+    leftMinipage.appendChild(infoBloc);
 }
 
 function retract_proposition_project(projId, projPropId, projPropNumbers)
