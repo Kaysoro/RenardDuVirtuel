@@ -14,48 +14,10 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
 
     document.getElementById("img_proj_"+projId+"_prop_"+projPropId).style.display = "none";
 
-    //creation de la vue
-    var container = document.createElement("div");
-    container.setAttribute("id", "container_proj_" + projId + "_prop_" + projPropId + "_opened");
-    propositionProject.appendChild(container);
-
-    //TODO: AJAX
-
-    var titreProjet = document.createElement("H1");
-    titreProjet.appendChild(document.createTextNode("Titre de la proposition"));
-    container.appendChild(titreProjet);
-
-    var minipageContainer = document.createElement("main");
-    minipageContainer.setAttribute("class", "minipageContainer");
-    container.appendChild(minipageContainer);
-
-    /*----left minipage----*/
-    var leftMinipage = document.createElement("div");
-    leftMinipage.setAttribute("class", "minipage minipage_left");
-    minipageContainer.appendChild(leftMinipage);
+    //TODO: visibilite des items a l'ouverture
 
     /*----visualisateur 3D----*/
     //TODO: remplacer par le unity web player
-    var visualisateur3D = document.createElement("img");
-    visualisateur3D.setAttribute("src", "http://placehold.it/640x480");
-    leftMinipage.appendChild(visualisateur3D);
-
-    /*----info bloc----*/
-    var infoBloc = document.createElement("div"); //TODO: find better HTML element
-
-    var priceTag = document.createElement("span");
-    priceTag.appendChild(document.createTextNode("5 000 000€"));
-    infoBloc.appendChild(priceTag);
-
-    var VRbutton = document.createElement("input");
-    VRbutton.setAttribute("type", "button");
-    VRbutton.setAttribute("value", "Réalité Virtuelle");
-    infoBloc.appendChild(VRbutton);
-
-    leftMinipage.appendChild(infoBloc);
-
-    /*----boutons de vote----*/
-    //TODO: boutons de vote
 
     /*---right minipage----*/
     var rightMinipage = document.createElement("aside");
@@ -77,41 +39,6 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
         commentContent.appendChild(document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit nisi quis enim faucibus semper. Nunc tortor sapien, ullamcorper eget fermentum sed, auctor et ligula. Quisque et magna nec orci malesuada lobortis."));
         comment.appendChild(commentContent);
     }
-
-    var addCommentForm = document.createElement("form");
-    addCommentForm.setAttribute("method", "POST");
-    addCommentForm.setAttribute("action", "addComment.php");
-    rightMinipage.appendChild(addCommentForm);
-
-    var addCommentInputHiddenProjId = document.createElement("input");
-    addCommentInputHiddenProjId.setAttribute("type", "hidden");
-    addCommentInputHiddenProjId.setAttribute("name", "projId");
-    addCommentInputHiddenProjId.setAttribute("value", projId);
-    addCommentForm.appendChild(addCommentInputHiddenProjId);
-
-    var addCommentInputHiddenProjPropId =  document.createElement("input");
-    addCommentInputHiddenProjPropId.setAttribute("type", "hidden");
-    addCommentInputHiddenProjPropId.setAttribute("name", "projPropId");
-    addCommentInputHiddenProjPropId.setAttribute("value", projPropId);
-    addCommentForm.appendChild(addCommentInputHiddenProjPropId);
-
-    var addCommentInputName = document.createElement("input");
-    addCommentInputName.setAttribute("type", "text");
-    addCommentInputName.setAttribute("name", "posterName");
-    addCommentInputName.setAttribute("placeholder", "Votre nom");
-    addCommentInputName.setAttribute("required", "true");
-    addCommentForm.appendChild(addCommentInputName);
-
-    var addCommentInputText = document.createElement("textarea");
-    addCommentInputText.setAttribute("name", "comment");
-    addCommentInputText.setAttribute("placeholder", "Votre commentaire");
-    addCommentInputText.setAttribute("required", "true");
-    addCommentForm.appendChild(addCommentInputText);
-
-    var addCommentInputSubmit = document.createElement("input");
-    addCommentInputSubmit.setAttribute("type", "submit");
-    addCommentInputSubmit.setAttribute("value", "Ajouter un commentaire");
-    addCommentForm.appendChild(addCommentInputSubmit);
 }
 
 function retract_proposition_project(projId, projPropId, projPropNumbers)

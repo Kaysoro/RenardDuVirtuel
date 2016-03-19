@@ -117,6 +117,10 @@
     height: auto;
 }
 
+.container_proj {
+    display: none;
+}
+
 .minipageContainer {
     display: flex;
     flex-flow: row wrap;
