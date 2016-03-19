@@ -32,6 +32,36 @@ function getUserId($db, $username)
     }
 }
 
+function getProjects($db)
+{
+    try
+    {
+        $request = $db->query("SELECT ID, Nom, Description FROM projet");
+        return $request->fetchAll();
+    }
+    catch (PDOException $e)
+    {
+        //NOTE: possible security problem with $e->errorMessage
+        die($e->getMessage());
+    }
+}
+
+function getPropositionsForProject($db, $projId)
+{
+    try
+    {
+        $request = $db->prepare("SELECT Entreprise, MaquetteUnity, Description, Prix FROM offreent WHERE Projet = ?");
+        $request->execute(array($projId));
+        $data = $request->fetchAll();
+        return $data;
+    }
+    catch (PDOException $e)
+    {
+        //NOTE: possible security problem with $e->errorMessage
+        die($e->getMessage());
+    }
+}
+
 function addVote($pdo, $userID, $vote, $offre)
 {
     try
