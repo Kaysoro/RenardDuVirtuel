@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+if(isset($_SESSION['connected']) && $_SESSION['connected'])
+    header('Location:./projets.php');
+?>
 <!DOCTYPE HTML>
 
 <html>
@@ -24,9 +30,9 @@
 			</div>
 
 			<div class="content">
-				<input name="username" type="text" class="username" placeholder="Adresse Mail" />
+				<input name="username" type="email" class="username" placeholder="Adresse Mail" required />
 				<div class="user-icon"></div>
-				<input name="password" type="password" class="password" placeholder="Mot de passe" />
+				<input name="password" type="password" class="password" placeholder="Mot de passe" required />
 				<div class="pass-icon"></div>
 			</div>
 			<div class="footer">
