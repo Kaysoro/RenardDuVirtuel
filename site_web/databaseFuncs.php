@@ -94,4 +94,20 @@ function addComment($pdo, $userID, $comment, $offre)
     }
 }
 
+function getComments($pdo, $offre)
+{
+    try
+    {
+        $request = $pdo->prepare("SELECT Texte, Pseudo FROM commentaire INNER JOIN utilisateur ON commentaire.utilisateur = utilisateur.ID WHERE offre = ? ORDER BY commentaire.ID DESC LIMIT 5");
+        $request->execute(array($offre));
+        $result = $request->fetchAll();
+        $request->closeCursor();
+        return $result;
+    }
+    catch (PDOException $e)
+    {
+        die($e->errorMessage());
+    }
+}
+
 ?>
