@@ -1,0 +1,42 @@
+.project {
+    background-color: aqua;
+    width: 100%;
+    display: block;
+}
+
+.project p {
+    display: none;
+}
+
+.moreButton {
+    border-style: none;
+    background: none;
+    color: transparent;
+    background-repeat: no-repeat;
+    height: 48px;
+    min-width: 48px;
+}
+
+.actionMore {
+    background-image: url("CSS_images/keyboard_arrow_down_48px.svg");
+}
+
+.actionLess {
+    background-image: url("CSS_images/keyboard_arrow_up_48px.svg");
+}
+
+.container_proposition_project {
+    background-color: greenyellow;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    min-width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.proposition_project {
+    background-color: deeppink;
+    display: block;
+    margin: 10px;
+}
