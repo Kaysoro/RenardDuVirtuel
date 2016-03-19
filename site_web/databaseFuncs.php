@@ -38,8 +38,24 @@ function addVote($pdo, $userID, $vote, $offre)
     try
     {
         $pdo->beginTransaction();
-        $request = $db->prepare("INSERT INTO vote(Etat, Utilisateur, offre) VALUES(:vote, :user, :offre)");
+        $request = $pdo->prepare("INSERT INTO vote(Etat, Utilisateur, offre) VALUES(:vote, :user, :offre)");
         $request->execute(array('vote'=>$vote, 'user'=>$userID, 'offre'=>$offre));
+        $pdo->commit();
+    }
+    catch (PDOException $e)
+    {
+        $pdo->rollBack();
+        die($e->errorMessage());
+    }
+}
+
+function addComment($pdo, $userID, $comment, $offre)
+{
+    try
+    {
+        $pdo->beginTransaction();
+        $request = $pdo->prepare("INSERT INTO commentaire(Texte, utilisateur, offre) VALUES(:texte, :user, :offre)");
+        $request->execute(array('texte'=>$comment, 'user'=>$userID, 'offre'=>$offre));
         $pdo->commit();
     }
     catch (PDOException $e)
