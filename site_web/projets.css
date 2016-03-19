@@ -39,8 +39,16 @@
 .proposition_project {
     background-color: deeppink;
     display: block;
+    width: 300px;
+    height: 263px;
     margin: 10px;
     padding: 2px;
+    transition: width 0.35s ease-in-out;
+}
+
+.proposition_project.opened {
+    width: 100%;
+    height: auto;
 }
 
 .minipageContainer {
