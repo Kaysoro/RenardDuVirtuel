@@ -104,6 +104,18 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     addCommentForm.setAttribute("action", "addComment.php");
     rightMinipage.appendChild(addCommentForm);
 
+    var addCommentInputHiddenProjId = document.createElement("input");
+    addCommentInputHiddenProjId.setAttribute("type", "hidden");
+    addCommentInputHiddenProjId.setAttribute("name", "projId");
+    addCommentInputHiddenProjId.setAttribute("value", projId);
+    addCommentForm.appendChild(addCommentInputHiddenProjId);
+
+    var addCommentInputHiddenProjPropId =  document.createElement("input");
+    addCommentInputHiddenProjPropId.setAttribute("type", "hidden");
+    addCommentInputHiddenProjPropId.setAttribute("name", "projPropId");
+    addCommentInputHiddenProjPropId.setAttribute("value", projPropId);
+    addCommentForm.appendChild(addCommentInputHiddenProjPropId);
+
     var addCommentInputName = document.createElement("input");
     addCommentInputName.setAttribute("type", "text");
     addCommentInputName.setAttribute("name", "posterName");
@@ -114,6 +126,7 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     var addCommentInputText = document.createElement("textarea");
     addCommentInputText.setAttribute("name", "comment");
     addCommentInputText.setAttribute("placeholder", "Votre commentaire");
+    addCommentInputText.setAttribute("required", "true");
     addCommentForm.appendChild(addCommentInputText);
 
     var addCommentInputSubmit = document.createElement("input");
