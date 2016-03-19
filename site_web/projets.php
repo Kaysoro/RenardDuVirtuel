@@ -19,8 +19,7 @@ $db = connectDB();
     </head>
 
     <body class="bg">
-
-   <div class="fixed">
+    <div class="fixed">
         <nav class="primary clearfix">
             <ul id="topnav" class="sf-menu">
                 <li>test@test.com</li>
@@ -58,7 +57,7 @@ $db = connectDB();
                     <a class="button" href="projet.php?projId=<?php echo $projId;?>&projPropId=<?php echo $projProp['ID'];?>" id="projPropActivationLink_<?php echo $projId . "_" . $projPropId;?>">
                         <h1><?php echo $projProp['Entreprise'];?></h1>
                     </a>
-                    <img class="rounded" alt="image projet" src="http://placehold.it/300x200" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
+                    <img class="resized rounded" alt="image projet" src="offres/<?php echo $projProp['MaquetteUnity']; ?>.png" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
                     <div id="container_proj_<?php echo $projId."_prop_".$projPropId; ?>" class="container_proj">
                         <main class="minipageContainer">
                             <div class="minipage minipage_left">
@@ -134,7 +133,5 @@ $db = connectDB();
                 }
             }
         </script>
-
     </body>
-
 </html>
