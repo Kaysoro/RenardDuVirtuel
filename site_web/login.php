@@ -15,6 +15,7 @@ else
         if(count($req->fetchAll()) > 0 || $_POST['username'] == 'test@test.com')//FIXME: make it secure !
         {
             $_SESSION['connected'] = true;
+            $_SESSION['userId'] = getUserId($db, $_POST['username']);
             header('Location:./projets.php');
         }
         else
