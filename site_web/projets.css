@@ -3,77 +3,77 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
 
 .bg {
-	background-color: #000;
+    background-color: #000;
 }
 
-	body, input, select, textarea {
-		color: #808080;
-		font-family: "Roboto", sans-serif;
-		font-size: 16pt;
-		font-weight: 400;
-		letter-spacing: -0.01em;
-		line-height: 1.65em;
-	}
+    body, input, select, textarea {
+        color: #808080;
+        font-family: "Roboto", sans-serif;
+        font-size: 16pt;
+        font-weight: 400;
+        letter-spacing: -0.01em;
+        line-height: 1.65em;
+    }
 
-		@media screen and (max-width: 1680px) {
+        @media screen and (max-width: 1680px) {
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+            body, input, select, textarea {
+                font-size: 12pt;
+            }
 
-		}
+        }
 
-		@media screen and (max-width: 1280px) {
+        @media screen and (max-width: 1280px) {
 
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
+            body, input, select, textarea {
+                font-size: 11pt;
+            }
 
-		}
+        }
 
-		@media screen and (max-width: 980px) {
+        @media screen and (max-width: 980px) {
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+            body, input, select, textarea {
+                font-size: 12pt;
+            }
 
-		}
+        }
 
-		@media screen and (max-width: 736px) {
+        @media screen and (max-width: 736px) {
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+            body, input, select, textarea {
+                font-size: 12pt;
+            }
 
-		}
+        }
 
-		@media screen and (max-width: 480px) {
+        @media screen and (max-width: 480px) {
 
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
+            body, input, select, textarea {
+                font-size: 12pt;
+            }
 
-		}
+        }
 
 .project {
-	background-color: #F3F3F3;
-	border-radius: 6px;
+    background-color: #F3F3F3;
+    border-radius: 6px;
     width: 80%;
     display: block;
-	margin:auto;
-	margin-bottom:20px;
-	text-align:justify;
-	padding:5px,5px,5px,5px;
+    margin:auto;
+    margin-bottom:20px;
+    text-align:justify;
+    padding:5px,5px,5px,5px;
 }
 
 .project h1 {
     font-size: 2.25em;
-	margin-left: 20px;
-	margin-bottom:5px;
-	top:20px;
-	height:40px;
-	position : relative;
-	text-align:center;
+    margin-left: 20px;
+    margin-bottom:5px;
+    top:20px;
+    height:40px;
+    position : relative;
+    text-align:center;
 }
 
 .project p {
@@ -81,7 +81,7 @@
 }
 
 .rounded {
-	border-radius: 6px;
+    border-radius: 6px;
 }
 
 .container_proposition_project {
@@ -100,16 +100,16 @@
     margin: 10px;
     padding: 2px;
     transition: width 0.35s ease-in-out;
-	text-align:center;
-	border-radius: 6px;
+    text-align:center;
+    border-radius: 6px;
 }
 
 .proposition_project h1 {
-	top:-15px;
-	position:relative;
+    top:-15px;
+    position:relative;
     font-size: 1.55em;
-	margin-left: 0px;
-	vertical-align:center;
+    margin-left: 0px;
+    vertical-align:center;
 }
 
 .proposition_project.opened {
@@ -135,41 +135,41 @@
 }
 
 .button {
-		width:268px;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-		background-color: #1cb495;
-		border-radius: 6px;
-		border: 0;
-		color: #ffffff !important;
-		cursor: pointer;
-		display: inline-block;
-		padding: 0 1em;
-		text-align: center;
-		text-decoration: none;
-		white-space: nowrap;
-		margin:5px;
-		position:relative;
-		height:65px;
-	}
+        width:268px;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        -ms-appearance: none;
+        appearance: none;
+        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+        background-color: #1cb495;
+        border-radius: 6px;
+        border: 0;
+        color: #ffffff !important;
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 1em;
+        text-align: center;
+        text-decoration: none;
+        white-space: nowrap;
+        margin:5px;
+        position:relative;
+        height:65px;
+    }
 
-		input[type="submit"]:hover,
-		input[type="reset"]:hover,
-		input[type="button"]:hover,
-		button:hover,
-		.button:hover {
-			background-color: #1fcaa7;
-		}
+        input[type="submit"]:hover,
+        input[type="reset"]:hover,
+        input[type="button"]:hover,
+        button:hover,
+        .button:hover {
+            background-color: #1fcaa7;
+        }
 
-		@media screen and (max-width: 480px) {
-			.button {
-				padding: 0;
-			}
+        @media screen and (max-width: 480px) {
+            .button {
+                padding: 0;
+            }
 
-		}
+        }
