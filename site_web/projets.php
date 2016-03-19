@@ -12,7 +12,7 @@ $db = connectDB();
     <html>
 	<head>
     </head>
-	
+
 	<div class="fixed">
 		<nav class="primary clearfix">
 			<ul id="topnav" class="sf-menu">
@@ -22,9 +22,9 @@ $db = connectDB();
 		</nav>
 	</div>
 
-    
+
     <body class="bg">
-		
+
         <header>
             <title>{ Accølad } Aménagement collaboratif et citoyen du Laval de demain</title>
             <meta charset="utf-8" />
@@ -60,7 +60,28 @@ $db = connectDB();
                     <div id="container_proj_<?php echo $projId."_prop_".$projPropId; ?>" class="container_proj">
                         <main class="minipageContainer">
                             <div class="minipage minipage_left">
-                                <img src="http://placehold.it/648x480" />
+
+                              <!-- TODO -->
+                              <frame>
+                              <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="480px" width="640px"></canvas>
+                              <br>
+                              <div class="logo"></div>
+                              <div class="fullscreen"><img src="./unity/web_gl/TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+                              <div class="title">VirtualCup</div>
+                            </div>
+                            <script type='text/javascript'>
+                          var Module = {
+                            TOTAL_MEMORY: 268435456,
+                            errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+                            compatibilitycheck: null,
+                            dataUrl: "./unity/web_gl/Development/web gl.data",
+                            codeUrl: "./unity/web_gl/Development/web gl.js",
+                            memUrl: "./unity/web_gl/Development/web gl.mem",
+                          };
+                        </script>
+                        <script src="./unity/web_gl/Development/UnityLoader.js"></script>
+                      </frame>
+                                <!-- <img src="http://placehold.it/648x480" /> -->
                                 <div>
                                     <span><?php echo $projProp['Prix'];?>&euro;</span>
                                     <input type="button" value="R&eacute;alit&eacute Virtuelle" />
