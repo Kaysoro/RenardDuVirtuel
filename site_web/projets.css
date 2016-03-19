@@ -2,6 +2,9 @@
 @import url(font-awesome.min.css);
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
 
+.margeYolo{
+	margin:55px;
+}
 .fixed {
   padding: 13px 0 14px;
   z-index: 9;
@@ -24,6 +27,7 @@ nav.primary {
 
 .sf-menu {
   margin: 0px;
+    height: 3ex;
   list-style: none;
   text-align: center;
 }
@@ -39,11 +43,21 @@ nav.primary {
   font-weight: 600;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    top: 1.2ex;
 }
 
 .sf-menu > li > a {
   color: #7c8387;
   text-decoration: none;
+}
+
+.sf-menu li:nth-child(1) {
+    left: 2em;
+}
+
+.sf-menu li:nth-child(2) {
+    right: 10%;
 }
 
 .bg {
