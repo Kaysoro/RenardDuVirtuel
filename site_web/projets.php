@@ -8,17 +8,19 @@ include_once('databaseFuncs.php');
 $db = connectDB();
 ?>
 
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
     <head>
-            <title>{ Accølad } Aménagement collaboratif et citoyen du Laval de demain</title>
+        <title>{ Accølad } Aménagement collaboratif et citoyen du Laval de demain</title>
             <meta charset="utf-8" />
             <link rel="stylesheet" href="projets.css" />
             <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
             <script type="text/javascript" src="projets.js"></script>
     </head>
 
-    <div class="fixed">
+    <body class="bg">
+
+   <div class="fixed">
         <nav class="primary clearfix">
             <ul id="topnav" class="sf-menu">
                 <li>test@test.com</li>
@@ -30,8 +32,7 @@ $db = connectDB();
         </nav>
     </div>
 
-
-    <body class="bg">
+    <div class="margeYolo"></div>
 
         <?php
 
