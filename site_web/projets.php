@@ -10,26 +10,26 @@ $db = connectDB();
 
     <!DOCTYPE html>
     <html>
-	<head>
+    <head>
     </head>
-	
-	<div class="fixed">
-		<nav class="primary clearfix">
-			<ul id="topnav" class="sf-menu">
-				<li>test@test.com</li>
-				<li><a class="fa fa-power-off fa-1x" href="disconnect.php"></a><a  href="disconnect.php">	Déconnecter</a></li>
-			</ul>
-		</nav>
-	</div>
 
-    
+    <div class="fixed">
+        <nav class="primary clearfix">
+            <ul id="topnav" class="sf-menu">
+                <li>test@test.com</li>
+                <li><a class="fa fa-power-off fa-1x" href="disconnect.php"></a><a  href="disconnect.php">	Déconnecter</a></li>
+            </ul>
+        </nav>
+    </div>
+
+
     <body class="bg">
-		
+
         <header>
             <title>{ Accølad } Aménagement collaboratif et citoyen du Laval de demain</title>
             <meta charset="utf-8" />
             <link rel="stylesheet" href="projets.css" />
-			<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
             <script type="text/javascript" src="projets.js"></script>
         </header>
         <?php
