@@ -14,6 +14,14 @@ if(isset($_SESSION['connected']) && $_SESSION['connected'])
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body>
+<?php
+        if(isset($_SESSION['connectionError']) && $_SESSION['connectionError'])
+        {
+?>
+        <details id="errorMessage">Adresse email ou mot de passe erroné !</details>
+<?php
+        }
+?>
 
 		<!-- Header -->
 			<header id="header">
