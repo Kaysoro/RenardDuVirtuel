@@ -28,9 +28,9 @@
 .container_proposition_project {
     background-color: greenyellow;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    min-width: 100%;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
     overflow-x: auto;
     overflow-y: auto;
 }
