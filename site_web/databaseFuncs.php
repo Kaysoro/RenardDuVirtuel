@@ -4,7 +4,7 @@ function connectDB()
 {
     try
     {
-        $pdo = new PDO('mysql:host=localhost;dbname=hackaton;charset=utf8', 'root', 'root');
+        $pdo = new PDO('mysql:host=localhost;dbname=hackathon;charset=utf8', 'root', 'YES');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     }
