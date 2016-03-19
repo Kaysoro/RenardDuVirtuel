@@ -47,10 +47,12 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     container.appendChild(titreProjet);
 
     var minipageContainer = document.createElement("main");
+    minipageContainer.setAttribute("class", "minipageContainer");
     container.appendChild(minipageContainer);
 
+    /*----left minipage----*/
     var leftMinipage = document.createElement("div");
-    leftMinipage.setAttribute("class", "leftMinipage");
+    leftMinipage.setAttribute("class", "minipage minipage_left");
     minipageContainer.appendChild(leftMinipage);
 
     /*----visualisateur 3D----*/
@@ -72,6 +74,52 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
     infoBloc.appendChild(VRbutton);
 
     leftMinipage.appendChild(infoBloc);
+
+    /*----boutons de vote----*/
+    //TODO: boutons de vote
+
+    /*---right minipage----*/
+    var rightMinipage = document.createElement("aside");
+    rightMinipage.setAttribute("class", "minipage minipage_right");
+    minipageContainer.appendChild(rightMinipage);
+
+    for(var i = 0; i < 4; ++i)
+    {
+        //TODO: AJAX
+        var comment = document.createElement("div");
+        comment.setAttribute("class", "comment");
+        rightMinipage.appendChild(comment);
+
+        var commentAuthor = document.createElement("h1");
+        commentAuthor.appendChild(document.createTextNode("John Doe a commenté"));
+        comment.appendChild(commentAuthor);
+
+        var commentContent = document.createElement("p");
+        commentContent.appendChild(document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit nisi quis enim faucibus semper. Nunc tortor sapien, ullamcorper eget fermentum sed, auctor et ligula. Quisque et magna nec orci malesuada lobortis."));
+        comment.appendChild(commentContent);
+    }
+
+    var addCommentForm = document.createElement("form");
+    addCommentForm.setAttribute("method", "POST");
+    addCommentForm.setAttribute("action", "addComment.php");
+    rightMinipage.appendChild(addCommentForm);
+
+    var addCommentInputName = document.createElement("input");
+    addCommentInputName.setAttribute("type", "text");
+    addCommentInputName.setAttribute("name", "posterName");
+    addCommentInputName.setAttribute("placeholder", "Votre nom");
+    addCommentInputName.setAttribute("required", "true");
+    addCommentForm.appendChild(addCommentInputName);
+
+    var addCommentInputText = document.createElement("textarea");
+    addCommentInputText.setAttribute("name", "comment");
+    addCommentInputText.setAttribute("placeholder", "Votre commentaire");
+    addCommentForm.appendChild(addCommentInputText);
+
+    var addCommentInputSubmit = document.createElement("input");
+    addCommentInputSubmit.setAttribute("type", "submit");
+    addCommentInputSubmit.setAttribute("value", "Ajouter un commentaire");
+    addCommentForm.appendChild(addCommentInputSubmit);
 }
 
 function retract_proposition_project(projId, projPropId, projPropNumbers)
