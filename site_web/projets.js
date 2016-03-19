@@ -14,15 +14,15 @@ function extend_proposition_project(projId, projPropId, projPropNumbers)
 
     document.getElementById("img_proj_"+projId+"_prop_"+projPropId).style.display = "none";
 
+    document.getElementById("container_proj_" + projId + "_prop_" + projPropId).setAttribute("class", "container_proj opened");
+
     //TODO: visibilite des items a l'ouverture
 
     /*----visualisateur 3D----*/
     //TODO: remplacer par le unity web player
 
     /*---right minipage----*/
-    var rightMinipage = document.createElement("aside");
-    rightMinipage.setAttribute("class", "minipage minipage_right");
-    minipageContainer.appendChild(rightMinipage);
+    var rightMinipage = document.getElementById("comment_section_" + projId + "_" + projPropId);
 
     for(var i = 0; i < 4; ++i)
     {
@@ -45,8 +45,16 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
 {
     document.getElementById("projPropActivationLink_"+projId+"_"+projPropId).setAttribute("onClick", "extend_proposition_project(" + projId + ", " + projPropId + ", " + projPropNumbers + ")");
 
-    document.getElementById("container_proj_" + projId + "_prop_" + projPropId + "_opened").remove();
+    document.getElementById("container_proj_" + projId + "_prop_" + projPropId).setAttribute("class", "container_proj");
+
     document.getElementById("img_proj_" + projId + "_prop_" + projPropId).style.display = "inline-block";
+
+    var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
+    propositionProject.setAttribute("class", "proposition_project");
+
+    var commentSection = document.getElementById("comment_section_" + projId + "_" + projPropId);
+    while(commentSection.firstChild)
+        commentSection.removeChild(commentSection.firstChild);
 
     var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
     propositionProject.setAttribute("class", "proposition_project");
@@ -69,5 +77,6 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
 
     propositionProject.removeEventListener("transitionend", delayedFunc);
 
+//*/
 
 }

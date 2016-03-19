@@ -55,7 +55,7 @@ $db = connectDB();
                                 </div>
                             </div>
                             <div class="minipage minipage_right">
-                                <div id="comment_section"><!-- //TODO: meilleur ID -->
+                                <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>"><!-- //TODO: meilleur ID -->
                                 </div>
                                 <div>
                                     <form method="POST" action="addComment.php">

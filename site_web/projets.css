@@ -121,6 +121,10 @@
     display: none;
 }
 
+.container_proj.opened {
+    display: block;
+}
+
 .minipageContainer {
     display: flex;
     flex-flow: row wrap;
