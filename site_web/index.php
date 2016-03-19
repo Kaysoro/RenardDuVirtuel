@@ -18,16 +18,16 @@
 		<div id="wrapper">
 
 		<form name="login-form" class="login-form" action="login.php" method="post">
-		
+
 			<div class="header-form">
-			
+
 			</div>
-		
+
 			<div class="content">
 				<input name="username" type="text" class="username" placeholder="Adresse Mail" />
 				<div class="user-icon"></div>
 				<input name="password" type="password" class="password" placeholder="Mot de passe" />
-				<div class="pass-icon"></div>		
+				<div class="pass-icon"></div>
 			</div>
 			<div class="footer">
 				<input type="submit" name="submit" value="Connecter" class="button" />
@@ -35,13 +35,13 @@
 			</div>
 		</form>
 	</div>
-		<!-- Signup Form 
+		<!-- Signup Form
 			<form id="signup-form" method="post" action="#">
 				<input type="submit" value="Pour" />
 				<input type="submit" value="Contre" />
 			</form>-->
 
-		<!-- Footer -->	
+		<!-- Footer -->
 				<ul class="copyright">
 					<li>Virtual CUP 2016</li><li>Crédits: Les renards du virtuel</li>
 				</ul>
