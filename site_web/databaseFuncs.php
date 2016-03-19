@@ -23,13 +23,12 @@ function getUserId($db, $username)
         $request->execute(array($username));
         $userId = $request->fetch();
         $request->closeCursor();
-        return $userId;
+        return $userId['ID'];
     }
     catch (PDOException $e)
     {
         //NOTE: possible security problem with $e->errorMessage
         die($e->getMessage());
-        echo "NOK";
     }
 }
 
