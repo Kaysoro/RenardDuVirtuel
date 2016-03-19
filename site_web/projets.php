@@ -7,7 +7,6 @@
             <title>Projets d'aménagements urbains à Laval</title>
             <meta charset="utf-8"/>
             <link rel="stylesheet" href="projets.css"/>
-            <script type="text/javascript" src="query_project.js"></script>
             <script type="text/javascript" src="projets.js"></script>
         </header>
 <?php
