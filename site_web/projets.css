@@ -33,12 +33,29 @@
     flex-flow: row wrap;
     justify-content: center;
     width: 100%;
-    overflow-x: auto;
-    overflow-y: auto;
+    overflow: auto;
 }
 
 .proposition_project {
     background-color: deeppink;
     display: block;
     margin: 10px;
+    padding: 2px;
+}
+
+.minipageContainer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    width: 100%;
+    overflow: auto;
+}
+
+.minipage {
+    background-color: mediumpurple;
+    width: 45%;
+    min-width: 640px;
+    flex-shrink: 0.5;
+    padding: 20px;
+    margin: 20px;
 }
