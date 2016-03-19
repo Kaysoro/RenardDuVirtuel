@@ -88,7 +88,7 @@ $db = connectDB();
                                     <span><?php echo $projProp['Prix'];?>&euro;</span>
                                     <input type="button" value="R&eacute;alit&eacute Virtuelle" />
                                 </div>
-                            </div>
+                            
                             <div class="minipage minipage_right">
                                 <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>"><!-- //TODO: meilleur ID -->
                                 </div>
@@ -101,6 +101,7 @@ $db = connectDB();
                                     </form>
                                 </div>
                             </div>
+						 </div>
                         </main>
                     </div>
                 </article>
