@@ -2,9 +2,17 @@
 session_start();
 if(!isset($_SESSION['connected']) || !$_SESSION['connected'])
     header('Location:./');
+
+include_once('databaseFuncs.php');
+
+$db = connectDB();
 ?>
+
     <!DOCTYPE html>
     <html>
+	<head>
+    </head>
+	
 	<div class="fixed">
 		<nav class="primary clearfix">
 			<ul id="topnav" class="sf-menu">
@@ -13,7 +21,8 @@ if(!isset($_SESSION['connected']) || !$_SESSION['connected'])
 			</ul>
 		</nav>
 	</div>
-	
+
+    
     <body class="bg">
 		
         <header>
@@ -24,43 +33,84 @@ if(!isset($_SESSION['connected']) || !$_SESSION['connected'])
             <script type="text/javascript" src="projets.js"></script>
         </header>
         <?php
-        $projPropNumbers = array(3,2,4);
 
-        for($projId = 0; $projId < count($projPropNumbers); ++$projId)
+        $projects = getProjects($db);
+
+        foreach($projects as $project)
         {
+            $projId = $project['ID'];
         ?>
-            <section class="project" id="proj_<?php echo $projId;?>">
-                <h1>Projet <?php echo $projId;?></h1>
-                <p>Description détaillée... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin aliquet, magna at varius iaculis, diam neque accumsan mi, sed pharetra turpis tortor eget tortor. Suspendisse bibendum ut nisi sed malesuada. Etiam aliquam faucibus nisi at hendrerit. Fusce quis urna at massa ullamcorper semper. Aliquam finibus laoreet posuere. Ut scelerisque sagittis ligula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras tempus nisl et dictum pharetra. Vivamus nec nisi lobortis, iaculis lorem vel, accumsan ante.</p>
-                <section class="container_proposition_project">
-                    <?php
-            for($projPropId = 0; $projPropId < $projPropNumbers[$projId]; ++$projPropId)
+        <section class="project" id="proj_<?php echo $projId;?>">
+            <h1><?php echo $project['Nom'];?></h1>
+            <p><?php echo $project['Description'];?></p>
+            <section class="container_proposition_project">
+                <?php
+            $projProps = getPropositionsForProject($db, $projId);
+            $nbPropParProj[$projId] = count($projProps);
+
+            foreach($projProps as $projPropId=>$projProp)
             {
+                $databaseProjPropId = $projProp['ID'];
                 ?>
-                        <article class="proposition_project" id="proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>">
-                            <a class="button" href="projet.php?projId=<?php echo $projId;?>&projPropId=<?php echo $projPropId;?>" id="projPropActivationLink_<?php echo $projId . "_" . $projPropId;?>"><h1>proposition de projet <?php echo $projPropId; ?></h1></a>
-                            <img class="rounded" alt="image projet" src="http://placehold.it/300x200" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
-                        </article>
-                        <?php
+                <article class="proposition_project propProj_<?php echo $projId; ?>" id="proj_<?php echo $projId."_prop_".$projPropId; ?>">
+                    <a class="button" href="projet.php?projId=<?php echo $projId;?>&projPropId=<?php echo $projProp['ID'];?>" id="projPropActivationLink_<?php echo $projId . "_" . $projPropId;?>">
+                        <h1><?php echo $projProp['Entreprise'];?></h1>
+                    </a>
+                    <img class="rounded" alt="image projet" src="http://placehold.it/300x200" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
+                    <div id="container_proj_<?php echo $projId."_prop_".$projPropId; ?>" class="container_proj">
+                        <main class="minipageContainer">
+                            <div class="minipage minipage_left">
+                                <img src="http://placehold.it/648x480" />
+                                <div>
+                                    <span><?php echo $projProp['Prix'];?>&euro;</span>
+                                    <input type="button" value="R&eacute;alit&eacute Virtuelle" />
+                                </div>
+                            </div>
+                            <div class="minipage minipage_right">
+                                <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>"><!-- //TODO: meilleur ID -->
+                                </div>
+                                <div>
+                                    <form method="POST" action="addComment.php">
+                                        <input type="hidden" name="projId" value="<?php echo $projId; ?>" />
+                                        <input type="hidden" name="projPropId" value="<?php echo $projPropId; ?>" />
+                                        <textarea name="comment" placeholder="Ajouter un commentaire" required></textarea>
+                                        <input type="submit" value="Ajouter un commentaire" />
+                                    </form>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                </article>
+                <?php
             }
                 ?>
-                </section>
             </section>
-            <?php
+        </section>
+        <?php
         }
         ?>
-                <script type="text/javascript">
-                    //startup script
-                    var projPropNumbers = <?php echo json_encode($projPropNumbers);?>;
-                    for (var projId = 0; projId < projPropNumbers.length; ++projId) {
-                        for (var projPropId = 0; projPropId < projPropNumbers[projId]; ++projPropId) {
-                            var projPropActivationLink = document.getElementById("projPropActivationLink_" + projId + "_" + projPropId);
-                            projPropActivationLink.setAttribute("href", "#proj_" + projId);
-                            projPropActivationLink.setAttribute("onClick", "extend_proposition_project(" + projId + ", " + projPropId + ", " + projPropNumbers[projId] + ")");
-                        }
-                    }
-                </script>
+        <script type="text/javascript">
+            //startup script
+            <?php
+                $projIds = array();
+                foreach($projects as $projet)
+                    $projIds[] = $projet['ID'];
+            ?>
+            var projIds = <?php echo json_encode($projIds); ?>;
+            var projPropLength = <?php echo json_encode($nbPropParProj);?>;
+            for (var projI = 0; projI < projIds.length; ++projI)
+            {
+                var projId = projIds[projI];
+
+                for (var projPropId = 0; projPropId < projPropLength[projId]; ++projPropId)
+                {
+                    var projPropActivationLink = document.getElementById("projPropActivationLink_" + projId + "_" + projPropId);
+                    projPropActivationLink.setAttribute("href", "#proj_" + projId);
+                    projPropActivationLink.setAttribute("onClick", "extend_proposition_project(" + projId + ", " + projPropId + ", " + projPropLength[projId] + ")");
+                }
+            }
+        </script>
 
     </body>
 
-    </html>
+</html>
