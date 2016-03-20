@@ -24,7 +24,7 @@ $db = connectDB();
             <ul id="topnav" class="sf-menu">
 				<li>{ Accølad }</li>
                 <li>
-                    <a class="fa fa-power-off fa-1x" href="disconnect.php"></a>
+                    <a class="fa fa-sign-out fa-1x" href="disconnect.php"></a>
                     <a href="disconnect.php">	Déconnecter</a>
                 </li>
 				<li class="centered">test@test.com</li>
@@ -61,18 +61,21 @@ $db = connectDB();
                     <img class="resized rounded" alt="image projet" src="offres/<?php echo $projProp['MaquetteUnity']; ?>.png" id="img_proj_<?php echo $projId; ?>_prop_<?php echo $projPropId; ?>" />
                     <div id="container_proj_<?php echo $projId."_prop_".$projPropId; ?>" class="container_proj">
                         <main class="minipageContainer">
+						
+							<!-- LEFT -->
                             <div class="minipage minipage_left">
-
-								
-								<img src="http://placehold.it/480x320" />
+								<p><?php echo $projProp['Description']; ?></p><span class="price">Prix du projet : <?php echo $projProp['Prix']; ?>&euro;</span>
+								 <img class="maquette rounded" src="http://placehold.it/480x320"/>
                                 <div>
-                                    <span><?php echo $projProp['Prix'];?>&euro;</span>
-                                    <input type="button" value="R&eacute;alit&eacute Virtuelle" />
+                                    <a href="<?php echo $projProp['PathWebGL']; ?>"><input class="littleButton" type="button" value="Visualisation 3D" /></a>
+									<a href="<?php echo $projProp['PathApk']; ?>"><input class="littleButton" type="button" value="Réalité Virtuelle" /></a>
                                 </div>
-
-                         </div>
+							</div>
+							
+							<!-- RIGHT -->
                             <div class="minipage minipage_right">
-                                <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>">
+							<span class="vote fa fa-smile-o fa-2x"><input name="pour" class="littleButton green" type="button" /></span>
+							<span class="vote fa fa-frown-o fa-2x"><input name="contre" class="littleButton red" type="button " /></span>
 <?php
                 $comments = getComments($db, $databaseProjPropId);
                 foreach($comments as $comment)

@@ -1,5 +1,5 @@
 /* TODO: transitions CSS */
-@import url(font-awesome.min.css);
+@import url("assets/css/font-awesome.min.css");
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
 
 .resized {
@@ -9,9 +9,6 @@
 
 .margeYolo{
 	margin:55px;
-}
-
-.centered{
 }
 
 .fixed {
@@ -199,7 +196,6 @@ nav.primary {
 }
 
 .minipageContainer {
-	background-color: red;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -208,19 +204,33 @@ nav.primary {
 }
 
 .minipage {
-    background-color: mediumpurple;
 	border: 5 px solid red;
+	border-radius:6px;
     padding: 20px;
     margin: 20px;
 }
 
+.minipage p {
+	text-align:justify;
+}
+
+.price {
+	text-decoration:underline;
+}
+
+.maquette {
+	width:480px;
+	height:320px;
+}
+
 .minipage_left {
-	width: 50%;
-	overflow: hidden;
+	background-color:#F3F3F3;
+	width: 45%;
 }
 
 .minipage_right {
-	width: 35%;
+	background-color:#F3F3F3;
+	width: 40%;
 }
 
 .button {
@@ -248,6 +258,14 @@ nav.primary {
         height:65px;
     }
 	
+	.green {
+		background-color:#32CD32;
+	}
+	
+	.red {
+		background-color:#B61B1B;
+	}
+	
 	.commentary {
 		width:200;
 	}
@@ -268,11 +286,10 @@ nav.primary {
         color: #ffffff !important;
         cursor: pointer;
         display: inline-block;
-        padding: 0 1em;
         text-align: center;
+		vertical-align:middle;
         text-decoration: none;
         white-space: nowrap;
-        margin:5px;
         position:relative;
         height:35px;
     }
