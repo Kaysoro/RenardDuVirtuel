@@ -22,8 +22,8 @@ function buttonResult(sData, offre)
         var bouton_pour = document.getElementById("bouton_pour_prop_"+offre);
         var bouton_contre = document.getElementById("bouton_contre_prop_"+offre);
 
-        bouton_pour.setAttribute("class", "disabled");
-        bouton_contre.setAttribute("class", "disabled");
+        bouton_pour.setAttribute("class", "littleButton-gray disabled");
+        bouton_contre.setAttribute("class", "littleButton-gray disabled");
     }
     else
     {

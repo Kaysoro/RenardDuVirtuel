@@ -11,6 +11,12 @@
     margin:55px;
 }
 
+.disabled {
+   pointer-events: none;
+   cursor: default;
+   background-color:gray;
+}
+
 .fixed {
     padding: 13px 0 14px;
     z-index: 9;
@@ -257,7 +263,7 @@ body, input, select, textarea {
     position:relative;
     height:65px;
 }
-    .littleButton, .littleButton-red, .littleButton-green {
+    .littleButton, .littleButton-red, .littleButton-green, .littleButton-gray {
         width:200px;
         -moz-appearance: none;
         -webkit-appearance: none;
@@ -291,6 +297,10 @@ body, input, select, textarea {
     .littleButton-green {
         background-color: #32CD32;
     }
+	
+	.littleButton-gray {
+		background-color:#BECFCF;
+	}
 
     input[type="submit"]:hover,
     input[type="reset"]:hover,

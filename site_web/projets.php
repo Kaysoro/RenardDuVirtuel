@@ -12,7 +12,7 @@ $db = connectDB();
 <html>
     <head>
         <title>{ Accølad } Aménagement collaboratif et citoyen du Laval de demain</title>
-        <meta value="charset=utf-8" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />  	
         <link rel="stylesheet" href="projets.css" />
         <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
         <script type="text/javascript" src="projets.js"></script>
@@ -78,26 +78,26 @@ $db = connectDB();
                             <!-- RIGHT -->
                             <div class="minipage minipage_right">
 
-                                <a name="pour" class="littleButton-green"/>
-                                <i class="fa fa-smile-o fa-2x" id="bouton_pour_prop_<?php echo $databaseProjPropId;?>"
-                                   <?php
+                                <a name="pour" id="bouton_pour_prop_<?php echo $databaseProjPropId;?>"
+								<?php
                 if($_SESSION['votes'][$databaseProjPropId] != 0)
-                    echo ' class="disabled" ';
+                    echo ' class="littleButton-gray disabled" ';
                 else
-                    echo ' onClick="request(buttonResult, ' . $databaseProjPropId . ', 1)"';
+                    echo 'class="littleButton-green" onClick="request(buttonResult, ' . $databaseProjPropId . ', 1)"';
                                    ?>>
-                                    J'aime
+                                <i class="fa fa-smile-o fa-2x" >
+                                   
                                 </i>
                                 </a>
-                            <a name="contre" class="littleButton-red"/>
-                            <i class="fa fa-frown-o fa-2x" id="bouton_contre_prop_<?php echo $databaseProjPropId;?>"
-                               <?php
+                            <a name="contre" id="bouton_contre_prop_<?php echo $databaseProjPropId;?>"
+							                               <?php
                 if($_SESSION['votes'][$databaseProjPropId] != 0)
-                    echo ' class="disabled" ';
+                    echo ' class="littleButton-gray disabled" ';
                 else
-                    echo ' onClick="request(buttonResult, ' . $databaseProjPropId . ', 0)"';
+                    echo ' class="littleButton-red" onClick="request(buttonResult, ' . $databaseProjPropId . ', 0)"';
                                ?>>
-                                Je n'aime pas
+                            <i class="fa fa-frown-o fa-2x">
+
                             </i>
                             </a>
                         <?php
