@@ -63,14 +63,15 @@ $db = connectDB();
                         <main class="minipageContainer">
                             <div class="minipage minipage_left">
 
-                             
-								<img src="http://placehold.it/648x480" />
+								
+								<img src="http://placehold.it/480x320" />
                                 <div>
                                     <span><?php echo $projProp['Prix'];?>&euro;</span>
                                     <input type="button" value="R&eacute;alit&eacute Virtuelle" />
                                 </div>
 
-                            <div>
+                         </div>
+                            <div class="minipage minipage_right">
                                 <div id="comment_section_<?php echo $projId . "_" . $projPropId;?>">
 <?php
                 $comments = getComments($db, $databaseProjPropId);
@@ -89,13 +90,12 @@ $db = connectDB();
                                     <form method="POST" action="addComment.php">
                                         <input type="hidden" name="projId" value="<?php echo $projId; ?>" />
                                         <input type="hidden" name="projPropId" value="<?php echo $databaseProjPropId; ?>" />
-										<table><tr><td>
-                                        <textarea class="commentary" name="comment" placeholder="Ajouter un commentaire" required></textarea></td>
-                                        <tr><td><input class="littleButton" type="submit" value="Ajouter un commentaire" /></td></tr></table>
+										
+                                        <textarea class="commentary" name="comment" placeholder="Ajouter un commentaire" required></textarea>
+                                       <input class="littleButton" type="submit" value="Ajouter un commentaire" />
                                     </form>
                                 </div>
                             </div>
-                         </div>
                         </main>
                     </div>
                 </article>
