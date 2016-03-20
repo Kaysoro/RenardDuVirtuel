@@ -62,6 +62,40 @@ function getPropositionsForProject($db, $projId)
     }
 }
 
+function getVotes($db, $userID)
+{
+    try
+    {
+        $resultVote = array();
+
+        $queryProps = $db->query("SELECT ID FROM offreent");
+        $queryVotes = $db->prepare("SELECT Etat FROM vote WHERE utilisateur = ? AND offre = ?");
+
+        while($offre = $queryProps->fetch())
+        {
+            $queryVotes->execute(array($userID, $offre['ID']));
+            $votes = $queryVotes->fetchAll();
+            $queryVotes->closeCursor();
+            if(count($votes) == 0)
+            {
+                $resultVote[$offre['ID']] = 0;
+            }
+            else
+            {
+                $thisVote = $votes[0]['Etat'];
+                $resultVote[$offre['ID']] = ($thisVote)? 1 : -1;
+            }
+        }
+
+        $queryProps->closeCursor();
+        return $resultVote;
+    }
+    catch (PDOException $e)
+    {
+        die($e->getMessage());
+    }
+}
+
 function addVote($pdo, $userID, $vote, $offre)
 {
     try

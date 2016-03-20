@@ -16,6 +16,7 @@ else
         {
             $_SESSION['connected'] = true;
             $_SESSION['userId'] = getUserId($db, $_POST['username']);
+            $_SESSION['votes'] = getVotes($db, $_SESSION['userId']);
             header('Location:./projets.php');
         }
         else
