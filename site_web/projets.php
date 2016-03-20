@@ -22,7 +22,7 @@ $db = connectDB();
     <div class="fixed">
         <nav class="primary clearfix">
             <ul id="topnav" class="sf-menu">
-				<li>{ Accølad }</li>
+				<li><a href="index.php">{ Accølad }</a></li>
                 <li>
                     <a class="fa fa-sign-out fa-1x" href="disconnect.php"></a>
                     <a href="disconnect.php">	Déconnecter</a>
@@ -74,22 +74,21 @@ $db = connectDB();
 							
 							<!-- RIGHT -->
                             <div class="minipage minipage_right">
-							<span class="vote fa fa-smile-o fa-2x"><input name="pour" class="littleButton green" type="button" /></span>
-							<span class="vote fa fa-frown-o fa-2x"><input name="contre" class="littleButton red" type="button " /></span>
-<?php
+							<a name="pour" class="littleButton"/><i class="vote fa fa-smile-o fa-2x"></i></a>
+							<a name="contre" class="littleButton"/><i class="vote fa fa-frown-o fa-2x"></i></a>
+				<?php
                 $comments = getComments($db, $databaseProjPropId);
                 foreach($comments as $comment)
                 {
-?>
+				?>
                                     <div class="comment">
                                         <h1><?php echo $comment['Pseudo'];?></h1>
                                         <p><?php echo $comment['Texte'];?></p>
                                     </div>
-<?php
+				<?php
                 }
-?>
-                                </div>
-                                <div>
+				?>
+								<div>
                                     <form method="POST" action="addComment.php">
                                         <input type="hidden" name="projId" value="<?php echo $projId; ?>" />
                                         <input type="hidden" name="projPropId" value="<?php echo $databaseProjPropId; ?>" />
@@ -98,6 +97,8 @@ $db = connectDB();
                                        <input class="littleButton" type="submit" value="Ajouter un commentaire" />
                                     </form>
                                 </div>
+                              </div>
+                                
                             </div>
                         </main>
                     </div>
