@@ -4,7 +4,7 @@ include_once("databaseFuncs.php");
 
 header("Content-type: text/plain");
 
-if(isset($_GET['offre']) && isset($_GET['value']))
+if(isset($_GET['offre']) && isset($_GET['value']) && $_SESSION['votes'][$_GET['offre']] == 0)
 {
     $db = connectDB();
     $vote = ($_GET['value'] == 0) ? false : true;
