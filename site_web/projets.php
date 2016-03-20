@@ -22,12 +22,12 @@ $db = connectDB();
     <div class="fixed">
         <nav class="primary clearfix">
             <ul id="topnav" class="sf-menu">
-				<li>{ Accølad }</li>
+                <li>{ Accølad }</li>
                 <li>
                     <a class="fa fa-power-off fa-1x" href="disconnect.php"></a>
                     <a href="disconnect.php">	Déconnecter</a>
                 </li>
-				<li class="centered">test@test.com</li>
+                <li class="centered">test@test.com</li>
             </ul>
         </nav>
     </div>
@@ -64,7 +64,7 @@ $db = connectDB();
                             <div class="minipage minipage_left">
 
 
-								<a href="<?php echo $projProp['PathWebGL']; ?>"> <img src="http://placehold.it/648x480"/> </a>
+                                <a href="<?php echo $projProp['PathWebGL']; ?>"> <img src="http://placehold.it/648x480"/> </a>
                                 <div>
                                     <span><?php echo $projProp['Prix'];?>&euro;</span>
                                     <input type="button" value="R&eacute;alit&eacute Virtuelle" />
@@ -89,7 +89,7 @@ $db = connectDB();
                                     <form method="POST" action="addComment.php">
                                         <input type="hidden" name="projId" value="<?php echo $projId; ?>" />
                                         <input type="hidden" name="projPropId" value="<?php echo $databaseProjPropId; ?>" />
-										<table><tr><td>
+                                        <table><tr><td>
                                         <textarea class="commentary" name="comment" placeholder="Ajouter un commentaire" required></textarea></td>
                                         <tr><td><input class="littleButton" type="submit" value="Ajouter un commentaire" /></td></tr></table>
                                     </form>
