@@ -7,11 +7,6 @@
 	width: 300px;
 }
 
-.vote {
-	text-align:center;
-	color:white;
-}
-
 .margeYolo{
 	margin:55px;
 }
@@ -263,19 +258,7 @@ nav.primary {
         height:65px;
     }
 	
-	.green {
-		background-color:#32CD32;
-	}
-	
-	.red {
-		background-color:#B61B1B;
-	}
-	
-	.commentary {
-		width:200;
-	}
-	
-	.littleButton {
+	.littleButton, .littleButton-red, .littleButton-green {
         width:200px;
         -moz-appearance: none;
         -webkit-appearance: none;
@@ -285,7 +268,6 @@ nav.primary {
         -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
         -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        background-color: #1cb495;
         border-radius: 6px;
         border: 0;
         color: #ffffff !important;
@@ -298,6 +280,18 @@ nav.primary {
         position:relative;
         height:35px;
     }
+	
+	.littleButton {
+		background-color: #1cb495;
+	}
+	
+	.littleButton-red {
+		background-color: #B61B1B;
+	}
+	
+	.littleButton-green {
+		background-color: #32CD32;
+	}
 
         input[type="submit"]:hover,
         input[type="reset"]:hover,

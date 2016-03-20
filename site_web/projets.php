@@ -74,8 +74,8 @@ $db = connectDB();
 							
 							<!-- RIGHT -->
                             <div class="minipage minipage_right">
-							<a name="pour" class="littleButton"/><i class="vote fa fa-smile-o fa-2x"></i></a>
-							<a name="contre" class="littleButton"/><i class="vote fa fa-frown-o fa-2x"></i></a>
+							<a name="pour" class="littleButton-green"/><i class="fa fa-smile-o fa-2x"></i></a>
+							<a name="contre" class="littleButton-red"/><i class="fa fa-frown-o fa-2x"></i></a>
 				<?php
                 $comments = getComments($db, $databaseProjPropId);
                 foreach($comments as $comment)
@@ -93,7 +93,7 @@ $db = connectDB();
                                         <input type="hidden" name="projId" value="<?php echo $projId; ?>" />
                                         <input type="hidden" name="projPropId" value="<?php echo $databaseProjPropId; ?>" />
 										
-                                        <textarea class="commentary" name="comment" placeholder="Ajouter un commentaire" required></textarea>
+                                        <textarea name="comment" placeholder="Ajouter un commentaire" required></textarea>
                                        <input class="littleButton" type="submit" value="Ajouter un commentaire" />
                                     </form>
                                 </div>
