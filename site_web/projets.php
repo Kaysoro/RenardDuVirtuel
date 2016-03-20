@@ -63,8 +63,8 @@ $db = connectDB();
                         <main class="minipageContainer">
                             <div class="minipage minipage_left">
 
-                             
-								<img src="http://placehold.it/648x480" />
+
+								<a href="<?php echo $projProp['PathWebGL']; ?>"> <img src="http://placehold.it/648x480"/> </a>
                                 <div>
                                     <span><?php echo $projProp['Prix'];?>&euro;</span>
                                     <input type="button" value="R&eacute;alit&eacute Virtuelle" />

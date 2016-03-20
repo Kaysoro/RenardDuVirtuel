@@ -50,7 +50,7 @@ function getPropositionsForProject($db, $projId)
 {
     try
     {
-        $request = $db->prepare("SELECT ID, Entreprise, MaquetteUnity, Description, Prix FROM offreent WHERE Projet = ?");
+        $request = $db->prepare("SELECT ID, Entreprise, MaquetteUnity, Description, Prix, PathWebGL FROM offreent WHERE Projet = ?");
         $request->execute(array($projId));
         $data = $request->fetchAll();
         return $data;
