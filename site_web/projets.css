@@ -286,6 +286,10 @@ body, input, select, textarea {
         height:35px;
     }
 
+	.message {
+		display:none;
+	}
+	
     .littleButton {
         background-color: #1cb495;
     }
@@ -298,7 +302,7 @@ body, input, select, textarea {
         background-color: #32CD32;
     }
 	
-	.littleButton-gray {
+	.littleButton-gray.disabled {
 		background-color:#BECFCF;
 	}
 

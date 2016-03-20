@@ -67,7 +67,7 @@ $db = connectDB();
                             <div class="minipage minipage_left">
 
                                 <p><?php echo $projProp['Description']; ?></p><span class="price">Prix du projet : <?php echo $projProp['Prix']; ?>&euro;</span>
-                                <img class="maquette rounded" src="http://placehold.it/480x320"/>
+                                <img class="maquette rounded" src="maquettes/<?php echo $projProp['MaquetteUnity']; ?>.png"/>
                                 <div>
                                     <a href="<?php echo $projProp['PathWebGL']; ?>"><input class="littleButton" type="button" value="Visualisation 3D" /></a>
                                     <a href="<?php echo $projProp['PathApk']; ?>"><input class="littleButton" type="button" value="Réalité Virtuelle" /></a>
@@ -100,6 +100,7 @@ $db = connectDB();
 
                             </i>
                             </a>
+							<div class="message" id="message">Merci d'avoir voté!</div>
                         <?php
                 $comments = getComments($db, $databaseProjPropId);
                 foreach($comments as $comment)

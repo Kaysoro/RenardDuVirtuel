@@ -18,7 +18,8 @@ function buttonResult(sData, offre)
 {
     if(sData == "OK")
     {
-        //TODO: message "merci d'avoir voté"
+		var message = document.getElementById("message");
+		message.style.display = "block";
         var bouton_pour = document.getElementById("bouton_pour_prop_"+offre);
         var bouton_contre = document.getElementById("bouton_contre_prop_"+offre);
 
@@ -27,6 +28,5 @@ function buttonResult(sData, offre)
     }
     else
     {
-        //TODO
     }
 }
