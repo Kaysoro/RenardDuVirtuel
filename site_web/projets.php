@@ -16,6 +16,7 @@ $db = connectDB();
         <link rel="stylesheet" href="projets.css" />
         <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
         <script type="text/javascript" src="projets.js"></script>
+        <script type="text/javascript" src="voteHandler.js"></script>
     </head>
 
     <body class="bg">
@@ -43,8 +44,8 @@ $db = connectDB();
         $projId = $project['ID'];
     ?>
     <section class="project" id="proj_<?php echo $projId;?>">
-        <h1><?php echo $project['Nom'];?></h1>
-        <p><?php echo $project['Description'];?></p>
+        <h1><?php echo htmlentities($project['Nom']);?></h1>
+        <p><?php echo htmlentities($project['Description']);?></p>
         <section class="container_proposition_project">
             <?php
         $projProps = getPropositionsForProject($db, $projId);
@@ -77,12 +78,24 @@ $db = connectDB();
                         <div class="minipage minipage_right">
 
                             <a name="pour" class="littleButton"/>
-                                <i class="vote fa fa-smile-o fa-2x">
+                                <i class="vote fa fa-smile-o fa-2x" id="bouton_pour_prop_<?php echo $databaseProjPropId;?>"
+<?php
+        if($_SESSION['votes'][$databaseProjPropId] != 0)
+            echo ' class="disabled" ';
+        else
+            echo ' onClick="request(buttonResult, ' . $databaseProjPropId . ', 1)"';
+?>>
                                     J'aime
                                 </i>
                             </a>
                             <a name="contre" class="littleButton"/>
-                                <i class="vote fa fa-frown-o fa-2x">
+                                <i class="vote fa fa-frown-o fa-2x" id="bouton_contre_prop_<?php echo $databaseProjPropId;?>"
+<?php
+        if($_SESSION['votes'][$databaseProjPropId] != 0)
+            echo ' class="disabled" ';
+        else
+            echo ' onClick="request(buttonResult, ' . $databaseProjPropId . ', 0)"';
+?>>
                                     Je n'aime pas
                                 </i>
                             </a>

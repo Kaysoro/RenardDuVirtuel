@@ -4,7 +4,7 @@ function request(callback, offre, value)
 
     xhr.onreadystatechange = function() {
         if(xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0))
-            callback(xhr.responseText);
+            callback(xhr.responseText, offre);
     }
 
     var URLoffre = encodeURIComponent(offre);
@@ -14,11 +14,16 @@ function request(callback, offre, value)
     xhr.send(null);
 }
 
-function buttonResult(sData)
+function buttonResult(sData, offre)
 {
     if(sData == "OK")
     {
-        //TODO
+        //TODO: message "merci d'avoir voté"
+        var bouton_pour = document.getElementById("bouton_pour_prop_"+offre);
+        var bouton_contre = document.getElementById("bouton_contre_prop_"+offre);
+
+        bouton_pour.setAttribute("class", "disabled");
+        bouton_contre.setAttribute("class", "disabled");
     }
     else
     {
