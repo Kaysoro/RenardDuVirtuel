@@ -3,64 +3,59 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto:400,700");
 
 .resized {
-	height : 200px;
-	width: 300px;
-}
-
-.vote {
-	text-align:center;
-	color:white;
+    height : 200px;
+    width: 300px;
 }
 
 .margeYolo{
-	margin:55px;
+    margin:55px;
 }
 
 .fixed {
-  padding: 13px 0 14px;
-  z-index: 9;
-  background: #fff;
-  margin-bottom: 3px;
-  -webkit-box-shadow: 0px 2px 5px 1px #cbcfd1;
-  box-shadow: 0px 2px 5px 1px #cbcfd1;
-  position: fixed;
-  width: 101%;
-  border-bottom: 1px solid #ccc;
-  top:-10px;
-  left:-10px;
+    padding: 13px 0 14px;
+    z-index: 9;
+    background: #fff;
+    margin-bottom: 3px;
+    -webkit-box-shadow: 0px 2px 5px 1px #cbcfd1;
+    box-shadow: 0px 2px 5px 1px #cbcfd1;
+    position: fixed;
+    width: 101%;
+    border-bottom: 1px solid #ccc;
+    top:-10px;
+    left:-10px;
 }
 
 nav.primary {
-  position: relative;
-  z-index: 2;
-  margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
 }
 
 .sf-menu {
-  margin: 0px;
+    margin: 0px;
     height: 3ex;
-  list-style: none;
-  text-align: center;
+    list-style: none;
+    text-align: center;
 }
 
 .sf-menu > li {
-  color: #7c8387;
-  padding: 0px;
-  margin: 0 17px;
-  display: inline-block;
-  text-transform: capitalize;
-  font-size: 15px;
-  line-height: 18px;
-  font-weight: 600;
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
+    color: #7c8387;
+    padding: 0px;
+    margin: 0 17px;
+    display: inline-block;
+    text-transform: capitalize;
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
     position: absolute;
     top: 1.2ex;
 }
 
 .sf-menu > li > a {
-  color: #7c8387;
-  text-decoration: none;
+    color: #7c8387;
+    text-decoration: none;
 }
 
 .sf-menu li:nth-child(1) {
@@ -77,58 +72,58 @@ nav.primary {
 
 .bg {
     background-image: url("images/laval.jpg");
-	background-attachment:fixed;
-	background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
 }
 
+body, input, select, textarea {
+    color: #808080;
+    font-family: "Roboto", sans-serif;
+    font-size: 16pt;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    line-height: 1.65em;
+}
+
+@media screen and (max-width: 1680px) {
+
     body, input, select, textarea {
-        color: #808080;
-        font-family: "Roboto", sans-serif;
-        font-size: 16pt;
-        font-weight: 400;
-        letter-spacing: -0.01em;
-        line-height: 1.65em;
+        font-size: 12pt;
     }
 
-        @media screen and (max-width: 1680px) {
+}
 
-            body, input, select, textarea {
-                font-size: 12pt;
-            }
+@media screen and (max-width: 1280px) {
 
-        }
+    body, input, select, textarea {
+        font-size: 11pt;
+    }
 
-        @media screen and (max-width: 1280px) {
+}
 
-            body, input, select, textarea {
-                font-size: 11pt;
-            }
+@media screen and (max-width: 980px) {
 
-        }
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
 
-        @media screen and (max-width: 980px) {
+}
 
-            body, input, select, textarea {
-                font-size: 12pt;
-            }
+@media screen and (max-width: 736px) {
 
-        }
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
 
-        @media screen and (max-width: 736px) {
+}
 
-            body, input, select, textarea {
-                font-size: 12pt;
-            }
+@media screen and (max-width: 480px) {
 
-        }
+    body, input, select, textarea {
+        font-size: 12pt;
+    }
 
-        @media screen and (max-width: 480px) {
-
-            body, input, select, textarea {
-                font-size: 12pt;
-            }
-
-        }
+}
 
 .project {
     background-color: #F3F3F3;
@@ -209,73 +204,60 @@ nav.primary {
 }
 
 .minipage {
-	border: 5 px solid red;
-	border-radius:6px;
+    border: 5 px solid red;
+    border-radius:6px;
     padding: 20px;
     margin: 20px;
 }
 
 .minipage p {
-	text-align:justify;
+    text-align:justify;
 }
 
 .price {
-	text-decoration:underline;
+    text-decoration:underline;
 }
 
 .maquette {
-	width:480px;
-	height:320px;
+    width:480px;
+    height:320px;
 }
 
 .minipage_left {
-	background-color:#F3F3F3;
-	width: 45%;
+    background-color:#F3F3F3;
+    width: 45%;
 }
 
 .minipage_right {
-	background-color:#F3F3F3;
-	width: 40%;
+    background-color:#F3F3F3;
+    width: 40%;
 }
 
 .button {
-        width:268px;
-        -moz-appearance: none;
-        -webkit-appearance: none;
-        -ms-appearance: none;
-        appearance: none;
-        -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        background-color: #1cb495;
-        border-radius: 6px;
-        border: 0;
-        color: #ffffff !important;
-        cursor: pointer;
-        display: inline-block;
-        padding: 0 1em;
-        text-align: center;
-        text-decoration: none;
-        white-space: nowrap;
-        margin:5px;
-        position:relative;
-        height:65px;
-    }
-	
-	.green {
-		background-color:#32CD32;
-	}
-
-	.red {
-		background-color:#B61B1B;
-	}
-
-	.commentary {
-		width:200;
-	}
-	
-	.littleButton {
+    width:268px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    background-color: #1cb495;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff !important;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 1em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    margin:5px;
+    position:relative;
+    height:65px;
+}
+    .littleButton, .littleButton-red, .littleButton-green {
         width:200px;
         -moz-appearance: none;
         -webkit-appearance: none;
@@ -285,31 +267,42 @@ nav.primary {
         -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
         -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
         transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-        background-color: #1cb495;
         border-radius: 6px;
         border: 0;
         color: #ffffff !important;
         cursor: pointer;
         display: inline-block;
         text-align: center;
-		vertical-align:middle;
+        vertical-align:middle;
         text-decoration: none;
         white-space: nowrap;
         position:relative;
         height:35px;
     }
 
-        input[type="submit"]:hover,
-        input[type="reset"]:hover,
-        input[type="button"]:hover,
-        button:hover,
+    .littleButton {
+        background-color: #1cb495;
+    }
+
+    .littleButton-red {
+        background-color: #B61B1B;
+    }
+
+    .littleButton-green {
+        background-color: #32CD32;
+    }
+
+    input[type="submit"]:hover,
+    input[type="reset"]:hover,
+    input[type="button"]:hover,
+    button:hover,
         .button:hover {
             background-color: #1fcaa7;
+    }
+
+    @media screen and (max-width: 480px) {
+        .button {
+            padding: 0;
         }
 
-        @media screen and (max-width: 480px) {
-            .button {
-                padding: 0;
-            }
-
-        }
+    }
