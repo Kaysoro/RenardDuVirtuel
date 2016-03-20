@@ -30,6 +30,7 @@ function retract_proposition_project(projId, projPropId, projPropNumbers)
 
     var propositionProject = document.getElementById("proj_" + projId + "_prop_" + projPropId);
     propositionProject.setAttribute("class", "proposition_project");
+	
 
     function delayedFunc ()
     {
